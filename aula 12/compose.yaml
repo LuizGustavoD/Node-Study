@@ -1,0 +1,50 @@
+services:
+  db_app:
+    image: mysql:8.4
+    container_name: aula12_db
+    ports:
+      - "3006:3306"
+    env_file:
+      - db.env
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h 127.0.0.1 -uroot -p$$MYSQL_ROOT_PASSWORD"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 20s
+
+    restart: on-failure
+
+    networks:
+      - node_app_network
+
+  app:
+    build: .
+    container_name: aula12_app
+    ports:
+      - "3001:3000"
+    env_file:
+      - .env
+    environment:
+      DB_HOST: db_app
+      DB_PORT: 3306
+    depends_on:
+      db_app:
+        condition: service_healthy
+    command: npm run dev
+
+    healthcheck:
+      test: ["CMD", "node", "-e", "fetch('http://localhost:3000/status').then(r => process.exit(r.ok ? 0 : 1)).catch(() => process.exit(1))"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 20s
+
+    networks:
+      - node_app_network
+
+networks:
+  node_app_network:
+
+
+    

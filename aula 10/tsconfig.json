@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "target": "ES6", // Qual padrão JS vamos compilar para
+    "module": "CommonJS", // Qual sistema de módulos
+    "outDir": "./dist", // Onde vai ficar os arquivos transpilados
+    "strict": true, // Ativar verificações estritas
+    "esModuleInterop": true, // Deixar compátivel o module além do common JS
+  }
+}

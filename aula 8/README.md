@@ -21,3 +21,7 @@ Dessa maneira basta utilizar no código JS.
 ```
 
 Dessa forma conseguimos estabelecer esse conexão.
+
+### Mais de um .env
+
+É comum termos diferentes .env, exemplo um para desenvolvimento e outro para produção.
