@@ -15,7 +15,7 @@ Repositório de estudos de Node.js e TypeScript, organizado por aulas.
 9. **aula 9**: Fundamentos de TypeScript como superset de JavaScript, diferenças entre erros de runtime e compile-time.
 10. **aula 10**: Setup completo de TypeScript em projetos Node (`typescript`, `tsx`, `tsconfig`, transpile e scripts de desenvolvimento/build).
 11. **aula 11**: Debugging em Node.js (breakpoints, call stack, inspeção de variáveis e integração com `launch.json` no VS Code).
-12. **aula 12**: Diretório reservado para continuidade dos estudos (ainda sem conteúdo).
+12. **aula 12**: API REST CRUD de usuários com Node.js + TypeScript + MySQL, incluindo execução local e ambiente com Docker Compose.
 
 ## Estrutura do repositório
 
